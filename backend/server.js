@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import {connectDB} from './config/db.js'
-import Product from "./models/product.models.js"
+import Product from "./models/product.model.js"
 
 const app = express()
 
@@ -13,7 +13,7 @@ app.listen(5000, () => {
   console.log("Hey Hey!! We're the Monkees!!")
 })
 
-app.post("/api/products", async (req, res) => {
+app.post("/products", async (req, res) => {
   const product = req.body
 
   if (!product.name || !product.price || !product.image) {
